@@ -11,21 +11,20 @@ namespace GreenBox
         {
 
             Console.WriteLine("Press Enter to generate password");
-            Console.ReadLine();
-            Console.Clear();
+            textHelp.ReadClear();
             string biasedKey = KeyGenerator.GetUniqueKeyOriginal_BIASED(24);
-            //Console.WriteLine("Biased Key: " + biasedKey);
-            //Console.ReadLine();
-            //Console.Clear();
+            Console.WriteLine("New Password: " + biasedKey);
+            textHelp.ReadClear();
 
             Console.WriteLine("Do you want to encrypt the file? (Y/N)");
             string response = Console.ReadLine().ToLower();
 
             if (response == "y" || response == "yes")
             {
-                SoftYellowENCDELIB.Encryptor.KeyRun();
+                Console.Clear();
+                Encryptor.KeyRun();
             }
-            else
+            else if (response == "n" || response == "no")
             {
 
                 string fileNameData = "GreenBoxExport.txt";
@@ -37,11 +36,16 @@ namespace GreenBox
                 string filePath = Path.Combine(directoryPath, fileName);
                 Console.Clear();
 
-                SoftYellowENCDELIB.Encryptor.KeyRun();
-
                 //System.IO.Directory.CreateDirectory(filePath);
 
                 File.AppendAllText(filePath, biasedKey + Environment.NewLine + Environment.NewLine);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Incorrect syntax");
+                Console.WriteLine("Contact girlnamedluna describing your issue");
+                Console.ReadLine();
             }
         }
     }
