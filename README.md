@@ -1,11 +1,13 @@
-- Not encrypted with SoftYellowENCDE
 - Password file in plaintext located in (If not, message me at girlnamedluna on discord) "C:\Users\YOURUSERNAMEHERE\OneDrive\Desktop\GreenBox Export" or possibly "C:\Users\YOURUSERNAMEHERE\Desktop\GreenBox Export"
-- If something does not work message me, if something is not clear please message me
+- If something does not work message me on discord, if something is not clear please message me on discord
 
-For Encryption
+In regards of ENcryption
 - You should not 'optionally encrypt' your file before you have a list of passwords that you have used
 - Do not lose your encryption key, write it down physically for the best level of security or write it in a text file on your desktop without saying what it is
 - Encryption key and contents will change every time so the same encryption key will not work twice over
+
+In regards of DEcryption
+- To decrypt your GreenBoxExport password file navigate to core/SoftYellowDEC/
 
 Possible usage for when to encrypt your passwords (i.e.: Only encrypt when the passwords are used and you do not plan on making anymore at that time)
 (Passwords shows are not used by me, do not try)
