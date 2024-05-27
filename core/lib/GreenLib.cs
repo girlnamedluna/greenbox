@@ -5,11 +5,18 @@ using System.Text;
 
 namespace GreenLib
 {
+    public class textHelp
+    {
+        public static void ReadClear()
+        {
+            Console.ReadLine();
+            Console.Clear();
+        }
+    }
     public class KeyGenerator
     {
         public static readonly char[] chars =
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+{}|[]\\:;'<>?,./`~".ToCharArray();
-
         public static string GetUniqueKey(int size)
         {
             byte[] data = new byte[4 * size];
