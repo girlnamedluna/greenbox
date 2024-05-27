@@ -10,11 +10,7 @@ namespace SoftYellowDEC
         {
             Console.WriteLine("Please enter your key: ");
             string key = Console.ReadLine();
-                if(string.IsNullOrEmpty(key))
-            {
-                Console.WriteLine("Oops! It seems you didn't enter anything in!\nPress Enter to close the program and try again!");
-                Console.ReadLine();
-            }
+            Console.Clear();
 
             string folderNameData2 = "GreenBoxExport";
             string fileName2 = "GreenBoxExport.txt";
@@ -48,6 +44,8 @@ namespace SoftYellowDEC
                 {
                     plaintext = srDecrypt.ReadToEnd();
                 }
+                Console.WriteLine("File successfully decrypted! Please press Enter to close the program");
+                Console.ReadLine();
             }
             File.WriteAllText(filePath2, plaintext);
             return plaintext;
