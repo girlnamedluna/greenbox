@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using GreenLib;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,8 @@ namespace SoftYellowENCDELIB
             string key = Generate256BitKey();
             Console.WriteLine("Your GreenBox Encryption key is: " + key + "\nPress Enter to continue");
             Console.WriteLine("Write this key down physically for maximum security, but a plaintext file on your desktop could be okay.");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Do not lose your key, you will lose your data with it");
+            textHelp.ReadClear();
+            Console.WriteLine("Do not lose your key, you will lose your data with it. Press Enter to continue");
 
             string fileNameData = "GreenBoxExport.txt";
             string folderNameData = "GreenBoxExport";
@@ -52,20 +52,19 @@ namespace SoftYellowENCDELIB
             Console.WriteLine(readText);
             Console.WriteLine("\r\n");
             Console.WriteLine("Press Enter to continue");
-            Console.ReadLine();
+            textHelp.ReadClear();
 
 
 
             byte[] encryptedBytes = EncryptStringToBytes_Aes(readText, key);
             File.WriteAllBytes(filePath2, encryptedBytes);
-            Console.Clear();
-            Console.WriteLine("Text Encrypted Succesfully! Do not lose your key! Write it down!");
-            Console.WriteLine("Previous file deleted, seriously, hold onto your key.");
-            Console.WriteLine("\r\n");
-            Console.WriteLine("Your key is: " + key + "\nPress Enter to end.");
+            Console.WriteLine("Text Encryption loaded successfully! Do not lose your key! Write it down!");
+            Console.WriteLine("Previous data encrypted, you can only get it back with your key. Do not lose your key. Press Enter to view your key once more.");
+            Console.WriteLine("\r\nPress Enter to continue and to view your key once more. (This is needed for encryption)");
+            textHelp.ReadClear();
+            Console.WriteLine("Your key is: " + key + "\nPress Enter to end and to encrypt.");
             Console.ReadLine();
         }
-
         private static string Generate256BitKey()
         {
             using (Aes aesAlg = Aes.Create())
