@@ -31,3 +31,4 @@ In regards of updates for GreenBox
 At some point in the future, the hope is these updates will be included but are not guarenteed
 - Make GreenBoxExport.txt and the parent folder naturally be inside of /core instead of in the user's desktop if possible
 - Make GreenBox.exe allow the user to type a number of passwords that they want to create all at once instead of having to run the .exe multiple times over
+- Make GreenBox.exe initialization method for first time run to create directory and associated file
